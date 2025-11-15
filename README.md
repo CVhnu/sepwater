@@ -11,3 +11,9 @@ Ubuntu >= 18.04
 CUDA >= 11.0  
 Python 3.8.20  
 
+\# git clone this repository
+git clone[() ]()
+
+\# create new anaconda env
+conda create -n sepwater python=3.8
+pip install -r requirement.txt
