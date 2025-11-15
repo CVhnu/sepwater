@@ -12,8 +12,9 @@ CUDA >= 11.0
 Python 3.8.20  
 
 \# git clone this repository
-git clone[() ]()
+git clone[(https://github.com/CVhnu/sepwater.git) ](https://github.com/CVhnu/sepwater.git)
 
 \# create new anaconda env
 conda create -n sepwater python=3.8
+\# Install dependencies
 pip install -r requirement.txt
