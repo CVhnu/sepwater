@@ -22,7 +22,7 @@ conda create -n sepwater python=3.8
 pip install -r requirement.txt
 
 
-\# Creating a dataset table
+\# Creating a dataset table:
 You need to split the dataset into training and testing sets, and create CSV files for both sets, placing them in their respective directories.
 
 
