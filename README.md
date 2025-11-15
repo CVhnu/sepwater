@@ -1,7 +1,7 @@
 # sepwater
 Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
 # Algorithm framework diagram：
-<img width="800" height="500" alt="屏幕截图 2025-11-15 151240" src="https://github.com/user-attachments/assets/2d4b4bab-aa1c-404a-9247-24df8f905ee1" />
+<img width="800" height="300" alt="屏幕截图 2025-11-15 151240" src="https://github.com/user-attachments/assets/2d4b4bab-aa1c-404a-9247-24df8f905ee1" />
 
 # Comparison images：
 <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/d54fec2a-ee32-4534-875d-8f060d0cd897" />
