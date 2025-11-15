@@ -30,14 +30,17 @@ pip install -r requirement.txt
 2. Preparing data for training
 
 \# Creating a dataset table
-You need to split the dataset into training and testing sets, and create CSV files for both sets, placing them in their respective directories
-
-# Quick test
-python inference.py 
+You need to split the dataset into training and testing sets, and create CSV files for both sets, placing them in their respective directories.And download the corresponding weight using the link we provided.
 
 
-## The released model can be downloaded at
+The released model can be downloaded at
 [(Download)]()
+
+# test
+
+
+
+
 
 
 
