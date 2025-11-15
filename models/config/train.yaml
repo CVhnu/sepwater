@@ -1,0 +1,103 @@
+model:
+  target: control_ldm.control.ControlAE
+  params:
+    first_stage_key: "image"
+    control_key: "secret"
+    scale_factor: 1.0
+    first_stage_config:
+      target: latent_diffmodel.models.autoencoder.VQModelInterface
+      params:
+        ckpt_path: models/model/vq-f4/model.ckpt
+        embed_dim: 3
+        n_embed: 8192
+        ddconfig:
+          double_z: false
+          z_channels: 3
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+
+    decoder_config:
+      target: control_ldm.diffsteg.SecretDecoder
+      params:
+        arch: resnet50
+
+    control_config:
+      target: control_ldm.control.SecretEncoder
+      params:
+        secret_len: 100
+        resolution: 64
+        base_res: 32
+    loss_config:
+      target: control_ldm.loss.ImageSecretLoss
+      params:
+        recon_type: yuv
+        recon_weight: 1.0
+        perceptual_weight: 1.0
+        secret_weight: 10.0
+        pmgl_weight: 0.5
+        kl_weight: 0.0
+        max_image_weight_ratio: 10.0
+    noise_config:
+      target: control_ldm.transformations.TransformNet
+      params:
+        do_jpeg: True
+        ramp: 10000
+        imagenetc_level: 5
+
+data:
+  target: anOther_funC.imgcap_dataset.DataModuleFromConfig
+  params:
+    batch_size: 8
+    num_workers: 4
+    wrap: false
+    use_worker_init_fn: true
+    train:
+      target: anOther_funC.image_dataset.ImageFolder
+      params:
+        data_dir: data
+        data_list: prep_data/mir_train2.csv
+        resize: 256
+    validation:
+      target: anOther_funC.image_dataset.ImageFolder
+      params:
+        data_dir: data
+        data_list: prep_data/mir_val2.csv
+        resize: 256
+lightning:
+  callbacks:
+    image_logger:
+      target: control_ldm.logger.ImageLogger
+      params:
+        batch_frequency: 5000
+        max_images: 4
+        increase_log_steps: False
+        fixed_input: True
+    progress_bar:
+      target: pytorch_lightning.callbacks.ProgressBar
+      params:
+        refresh_rate: 100
+    checkpoint:
+      target: pytorch_lightning.callbacks.ModelCheckpoint
+      params:
+        verbose: true
+        filename: '{epoch:06}-{step:09}'
+        every_n_train_steps: 50000
+
+  trainer:
+    benchmark: True
+    base_learning_rate: 8e-5
+    accumulate_grad_batches: 1
+
+
+

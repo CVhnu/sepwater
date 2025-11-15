@@ -1,0 +1,56 @@
+model:
+  target: control_ldm.control.ControlAE
+  params:
+    first_stage_key: "image"
+    control_key: "secret"
+    scale_factor: 1.0
+    first_stage_config:
+      target: latent_diffmodel.models.autoencoder.VQModelInterface
+      params:
+        embed_dim: 3
+        n_embed: 8192
+        ddconfig:
+          double_z: false
+          z_channels: 3
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+
+    decoder_config:
+      target: control_ldm.diffsteg.SecretDecoder
+      params:
+        arch: resnet50
+        
+    control_config:
+      target: control_ldm.control.SecretEncoder
+      params:
+        secret_len: 100
+        resolution: 64
+        base_res: 32
+    loss_config:
+      target: control_ldm.loss.ImageSecretLoss
+      params:
+        recon_type: yuv
+        recon_weight: 1.0
+        perceptual_weight: 1.0
+        secret_weight: 10.0
+        pmgl_weight: 0.5
+        kl_weight: 0.0
+        max_image_weight_ratio: 10.0
+    noise_config:
+      target: control_ldm.transformations.TransformNet
+      params:
+        do_jpeg: True
+        ramp: 10000
+        imagenetc_level: 5
+
