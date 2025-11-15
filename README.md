@@ -16,5 +16,7 @@ git clone[(https://github.com/CVhnu/sepwater.git) ](https://github.com/CVhnu/sep
 
 \# create new anaconda env
 conda create -n sepwater python=3.8
+
+
 \# Install dependencies
 pip install -r requirement.txt
