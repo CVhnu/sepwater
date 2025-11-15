@@ -36,7 +36,9 @@ The released model can be downloaded at
 
 # run
 python embed.py --config ../../../Embed_Ad_Extract.yaml --weight ../../../last.ckpt --secret xxy --cover ../../../###original-image --output ../../../###output-path
+
 python extract.py --config ../../../Embed_Ad_Extract.yaml --weight ../../../last.ckpt --cover ../../../###output-path
+
 CUDA_VISIBLE_DEVICES=1 python train.py --config ../../../train.yaml --secret_len ****** --max_image_weight_ratio *** --batch_size ***    ####you can change *****
 
 
