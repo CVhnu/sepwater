@@ -30,8 +30,8 @@ You need to split the dataset into training and testing sets, and create CSV fil
 1. Download the pretrained checkpoints.
 2. Preparing data for training
 
-   [\# Creating a dataset table
-You need to split the dataset into training and testing sets, and create CSV files for both sets, placing them in their respective directories.k](url)
+\# Creating a dataset table
+You need to split the dataset into training and testing sets, and create CSV files for both sets, placing them in their respective directories
 
 # Quick test
 python inference.py 
