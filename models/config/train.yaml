@@ -66,13 +66,13 @@ data:
       target: anOther_funC.image_dataset.ImageFolder
       params:
         data_dir: data
-        data_list: prep_data/mir_train2.csv
+        data_list: data_csv/mir_train2.csv
         resize: 256
     validation:
       target: anOther_funC.image_dataset.ImageFolder
       params:
         data_dir: data
-        data_list: prep_data/mir_val2.csv
+        data_list: data_csv/mir_val2.csv
         resize: 256
 lightning:
   callbacks:
