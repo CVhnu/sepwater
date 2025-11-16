@@ -32,7 +32,7 @@ You need to split the dataset into training and testing sets, and create CSV fil
 
 
 The released model can be downloaded at
-[(Download)]()
+[(Download)](https://drive.google.com/drive/folders/1NC5q8BsrUntZ6y_5o267GXnaowoNXp90?usp=drive_link)
 
 # run
 python embed.py --config ../../../Embed_Ad_Extract.yaml --weight ../../../last.ckpt --secret xxy --cover ../../../###original-image --output ../../../###output-path
