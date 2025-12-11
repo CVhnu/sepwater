@@ -1,9 +1,8 @@
 # Sepwater
 Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
 
-< img src="https://github.com/CVhnu/sepwater/raw/main/images/1.png" width="100%">
-< img src="https://github.com/CVhnu/sepwater/raw/main/images/2.png" width="100%">
-
+![Image 1](https://github.com/CVhnu/sepwater/raw/main/images/1.png)
+![Image 2](https://github.com/CVhnu/sepwater/raw/main/images/2.png)
 
 # Dependencies and Installation
 Ubuntu >= 18.04  
