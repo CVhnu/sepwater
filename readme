@@ -1,13 +1,12 @@
 # CtrlDehNet
-Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
-
-
-
+Beyond Direct Embedding: Secure Separable Latent
+Space Watermarking for Anti-Screen-Shooting
+<img src='https://github.com/CVhnu/CtrlDehNet/blob/main/ctrl.png'>
 
 # Dependencies and Installation
 Ubuntu >= 18.04  
 CUDA >= 11.0  
-Python 3.9  
+Python 3.6  
 Pytorch 1.2.0  
 
 \# git clone this repository
@@ -35,6 +34,6 @@ If you find our repo useful for your research, please cite us:
 # License
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
 
+# Acknowledgement
 
-
-
+Code is inspired by ([RIDCP](https://github.com/RQ-Wu/RIDCP_dehazing)) and ([BasicSR](https://github.com/XPixelGroup/BasicSR)) .
