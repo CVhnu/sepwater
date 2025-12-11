@@ -2,6 +2,8 @@
 Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
 
 
+
+
 # Dependencies and Installation
 Ubuntu >= 18.04  
 CUDA >= 11.0  
@@ -32,6 +34,7 @@ If you find our repo useful for your research, please cite us:
 
 # License
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
+
 
 
 
