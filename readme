@@ -1,19 +1,18 @@
 # Sepwater
 Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
 
-<img src='https://github.com/CVhnu/sepwater/blob/main/images/1.png'>
-<img src='https://github.com/CVhnu/sepwater/blob/main/images/2.png'>
+<img src='https://raw.githubusercontent.com/CVhnu/sepwater/main/images/1.png' width="800">
+<img src='https://raw.githubusercontent.com/CVhnu/sepwater/main/images/2.png' width="800">
 
 # Dependencies and Installation
 Ubuntu >= 18.04  
 CUDA >= 11.0  
 Python 3.8 
- 
 
-\# git clone this repository
-git clone[(https://github.com/CVhnu/sepwater.git) ](https://github.com/CVhnu/sepwater.git)
+# git clone this repository
+git clone https://github.com/CVhnu/sepwater.git
 
-\# create new anaconda env
+# create new anaconda env
 conda create -n sepwater python=3.8  
 
 # Get Started
@@ -21,25 +20,14 @@ conda create -n sepwater python=3.8
 2. Preparing data for training
 
 # Quick test
-python embed.py and extact.py 
-
+python embed.py
+python extract.py  # 注：原拼写错误 "extact.py" 修正为 "extract.py"
 
 ## The released model can be downloaded at
-[(Download)](https://drive.google.com/drive/folders/1NC5q8BsrUntZ6y_5o267GXnaowoNXp90?usp=sharing)
-
+[Download](https://drive.google.com/drive/folders/1NC5q8BsrUntZ6y_5o267GXnaowoNXp90?usp=sharing)
 
 # Citation
 If you find our repo useful for your research, please cite us:
 
-
 # License
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
-
-
-
-
-
-
-
-
-
