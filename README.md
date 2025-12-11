@@ -1,0 +1,34 @@
+# Sepwater
+Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
+
+< img src="https://github.com/CVhnu/sepwater/raw/main/images/1.png" width="100%">
+< img src="https://github.com/CVhnu/sepwater/raw/main/images/2.png" width="100%">
+
+
+# Dependencies and Installation
+Ubuntu >= 18.04  
+CUDA >= 11.0  
+Python 3.8 
+
+# git clone this repository
+git clone https://github.com/CVhnu/sepwater.git
+
+# create new anaconda env
+conda create -n sepwater python=3.8  
+
+# Get Started
+1. Download the pretrained checkpoints.
+2. Preparing data for training
+
+# Quick test
+python embed.py
+python extract.py 
+
+## The released model can be downloaded at
+[Download](https://drive.google.com/drive/folders/1NC5q8BsrUntZ6y_5o267GXnaowoNXp90?usp=sharing)
+
+# Citation
+If you find our repo useful for your research, please cite us:
+
+# License
+Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
