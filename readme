@@ -6,21 +6,21 @@ Space Watermarking for Anti-Screen-Shooting
 # Dependencies and Installation
 Ubuntu >= 18.04  
 CUDA >= 11.0  
-Python 3.6  
-Pytorch 1.2.0  
+Python 3.8 
+ 
 
 \# git clone this repository
-git clone[(https://github.com/CVhnu/CtrlDehNet.git) ](https://github.com/CVhnu/CtrlDehNet.git)
+git clone[(https://github.com/CVhnu/sepwater.git) ](https://github.com/CVhnu/sepwater.git)
 
 \# create new anaconda env
-conda create -n ctrldehnet python=3.8  
+conda create -n sepwater python=3.8  
 
 # Get Started
 1. Download the pretrained checkpoints.
 2. Preparing data for training
 
 # Quick test
-python inference.py 
+python embed.py and extact.py 
 
 
 ## The released model can be downloaded at
@@ -33,6 +33,7 @@ If you find our repo useful for your research, please cite us:
 
 # License
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
+
 
 
 
