@@ -1,0 +1,1 @@
+After these watermarked images are captured, we need to extract the watermarked images relatively completely using the PespectiveTransformation.m file provided in the code, and finally perform inference using the extract.py file.

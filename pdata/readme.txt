@@ -1,0 +1,1 @@
+Before training, you need to download the dataset required for training. You can also use coco2014, which we mentioned in our article. Then, create a .csv file from the dataset, as shown in the example in pdata.
