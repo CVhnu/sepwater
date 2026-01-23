@@ -1,9 +1,0 @@
-CUDA_VISIBLE_DEVICES=1   python embed.py   --config models/VQ4_mir_inference.yaml   --weight /home/xxy/Desktop/models/sepwater_F1/checkpoints/epoch=000023-step=000599999.ckpt   --secret xxy   --cover /home/xxy/Desktop/myimages512/   --output /home/xxy/Desktop/SSDS_gray/
-CUDA_VISIBLE_DEVICES=1 python extract.py   --config models/VQ4_mir_inference.yaml   --weight /home/xxy/DesktopS/models/sepwater_F1/checkpoints/epoch=000023-step=000599999.ckpt   --secret xxy   --cover /home/xxy/Desktop/SSDS_gray/
-CUDA_VISIBLE_DEVICES=1 python train.py --config models/VQ4_mir.yaml --secret_len 100 --max_image_weight_ratio 10 --batch_size 4
-
-
-
-
-
-
