@@ -24,6 +24,7 @@ python embed.py
 python extract.py 
 
 # statement
+In this update, we've integrated the accompanying test dataset into the download link. You can directly obtain the trained weight and test files through the link above. We've also optimized the naming conventions for functions and files, further improving code readability. We will continue to update this link with updates on subsequent iterations！
 
 ## The released model can be downloaded at
 [Download](https://drive.google.com/drive/folders/1NC5q8BsrUntZ6y_5o267GXnaowoNXp90?usp=sharing)
