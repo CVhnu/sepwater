@@ -1,0 +1,104 @@
+model:
+  target: control_Latent_Diffusion_Model.autoencoder3.ControlAE
+  params:
+    first_stage_key: "image"
+    control_key: "secret"
+    scale_factor: 1.0
+    first_stage_config:
+      target: Latent_Diffusion_Model.pre_trained_models.autoencoder.VQModelInterface
+      params:
+        ckpt_path: pre_trained_models/first_stage_models/vq-f4/first_stage_KL-f4.ckpt
+        embed_dim: 3
+        n_embed: 8192
+        ddconfig:
+          double_z: false
+          z_channels: 3
+          resolution: 224
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+
+    decoder_config:
+      target: control_Latent_Diffusion_Model.decoderF.SecretDecoder
+      params:
+        arch: resnet50
+
+    control_config:
+      target: control_Latent_Diffusion_Model.autoencoder3.SecretEncoder
+      params:
+        secret_len: 100
+        resolution: 56
+        base_res: 28
+    loss_config:
+      target: control_Latent_Diffusion_Model.loss.ImageSecretLoss
+      params:
+        recon_type: yuv
+        recon_weight: 1.0
+        perceptual_weight: 1.0
+        secret_weight: 10.0
+        lra_weight: 0.5
+        kl_weight: 0.0
+        max_image_weight_ratio: 10.0
+    noise_config:
+      target: control_Latent_Diffusion_Model.transformations.TransformNet
+      params:
+        do_jpeg: True
+        ramp: 10000
+        imagenetc_level: 5
+
+data:
+  target: tools.imgcap_dataset.DataModuleFromConfig
+  params:
+    batch_size: 8
+    num_workers: 4
+    wrap: false
+    use_worker_init_fn: true
+    train:
+      target: tools.image_dataset.ImageFolder
+      params:
+        data_dir: data
+        data_list: pdata/mir_train2.csv
+        resize: 224
+    validation:
+      target: tools.image_dataset.ImageFolder
+      params:
+        data_dir: data
+        data_list: pdata/mir_val2.csv
+        resize: 224
+lightning:
+  callbacks:
+    image_logger:
+      target: control_Latent_Diffusion_Model.logger.ImageLogger
+      params:
+        batch_frequency: 5000
+        max_images: 4
+        increase_log_steps: False
+        fixed_input: True
+    progress_bar:
+      target: pytorch_lightning.callbacks.ProgressBar
+      params:
+        refresh_rate: 100
+    checkpoint:
+      target: pytorch_lightning.callbacks.ModelCheckpoint
+      params:
+        verbose: true
+        filename: '{epoch:06}-{step:09}'
+        every_n_train_steps: 50000
+
+  trainer:
+    benchmark: True
+#    base_learning_rate: 2e-5
+    base_learning_rate: 2e-5
+    accumulate_grad_batches: 1
+
+
+
