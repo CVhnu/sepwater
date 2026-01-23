@@ -1,7 +1,7 @@
 # Sepwater
 Beyond Direct Embedding: Secure Separable Latent Space Watermarking for Anti-Screen-Shooting
 
-![Image 1](https://github.com/CVhnu/sepwater/raw/main/images/1.png)
+![Image 1](https://github.com/CVhnu/sepwater/blob/97651a3fa16365ca4dba0fd1b8307e093e799bb4/EDDD63931DD6647AD4F6321DD9E89398.png)
 ![Image 2](https://github.com/CVhnu/sepwater/raw/main/images/2.png)
 
 # Dependencies and Installation
