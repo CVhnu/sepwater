@@ -1,0 +1,16 @@
+CUDA_VISIBLE_DEVICES=1   python embed.py   --config models/inference.yaml   --weight /home/xxy/Desktop/models/sepwater_F1/checkpoints/last.ckpt   --secret xxy   --cover /home/xxy/Desktop/myimages512/   --output /home/xxy/Desktop/iamsogood/
+
+
+
+CUDA_VISIBLE_DEVICES=1 python extract.py   --config models/inference.yaml     --weight /home/xxy/DesktopS/models/sepwater_F1/checkpoints/last.ckpt   --secret xxy   --cover /home/xxy/Desktop/iamsogood/
+
+
+
+
+CUDA_VISIBLE_DEVICES=1 python train.py --config models/train.yaml --secret_len 100 --max_image_weight_ratio 10 --batch_size 4
+
+
+
+
+
+
